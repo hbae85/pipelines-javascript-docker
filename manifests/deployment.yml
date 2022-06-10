@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: hbaepipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hbaepipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: hbaepipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: hbaepipelinesjavascriptdocker 
+          image: user33acr.azurecr.io/hbaepipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
